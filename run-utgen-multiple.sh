@@ -7,7 +7,7 @@ export direction="some_direction"
 main_script="./run-utgen-files.sh"
 
 # Loop for five attempts
-for attempt in {4..5}
+for attempt in {1..5}
 do
   echo "==============================="
   echo " Running Attempt $attempt "
