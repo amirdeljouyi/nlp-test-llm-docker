@@ -83,7 +83,7 @@ tail -n +2 "$INPUT_CSV" | while IFS=',' read -r PROJECT CLASSNAME CUT_CLASS PACK
       --add-opens java.base/java.util=ALL-UNNAMED \
       --add-opens java.base/java.net=ALL-UNNAMED \
       --add-opens java.desktop/java.awt=ALL-UNNAMED \
-      -jar utgen-coverage.jar \
+      -jar llmsuite-coverage.jar \
       -projectCP "$sourceDir/$CP:llm-tests.jar" \
       -class "$CUT_CLASS" \
       -Djunit "$CLASS_FILE" \

@@ -3,13 +3,13 @@
 INPUT_TYPE=$1
 ATTEMPT=$2
 
-if [ "$INPUT_TYPE" == "utgen-files" ]; then
+if [ "$INPUT_TYPE" == "llmsuite" ]; then
     if [ -z "$ATTEMPT" ]; then
-        echo "No attempt specified. Running UTGen multiple..."
-        /app/run-utgen-multiple.sh
+        echo "No attempt specified. Running LLMSuite multiple..."
+        /app/run-llmsuite-multiple.sh
     else
-        echo "Running UTGen with attempt $ATTEMPT..."
-        /app/run-utgen-files.sh "$ATTEMPT"
+        echo "Running LLMSuite with attempt $ATTEMPT..."
+        /app/run-llmsuite-files.sh "$ATTEMPT"
     fi
 else
     if [ -z "$ATTEMPT" ]; then

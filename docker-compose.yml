@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   experiment-runner:
-    image: utgen-nlp-image   # <-- Use the name of your prebuilt image
+    image: llmsuite-nlp-image   # <-- Use the name of your prebuilt image
     container_name: experiment-runner
     entrypoint: [ "bash", "/app/run-experiment.sh" ]
-    command: [ "utgen"]  # <-- Replace with your actual args or override at runtime
+    command: [ "llmsuite"]  # <-- Replace with your actual args or override at runtime

@@ -4,7 +4,7 @@
 export direction="some_direction"
 
 # Path to your main script
-main_script="./run-utgen-files.sh"
+main_script="./run-llmsuite-files.sh"
 
 # Loop for five attempts
 for attempt in {1..5}

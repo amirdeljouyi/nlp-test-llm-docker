@@ -1,5 +1,5 @@
 # Base image
-FROM eclipse-temurin:11-jdk AS utgen-nlp-client
+FROM eclipse-temurin:11-jdk AS llmsuite-nlp-client
 LABEL authors="amirdeljouyi"
 
 RUN apt-get update && apt-get clean
