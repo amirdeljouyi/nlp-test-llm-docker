@@ -24,7 +24,7 @@ do
   echo ""
 
   sourceDir="/app/dataset/$proj/"
-  outputDir="llmsuite-files-tests/"
+  outputDir="/app/dataset/llmsuite/"
 
   # Prepare log directory
   logDir="$outputDir/log/"
