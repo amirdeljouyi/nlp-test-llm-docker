@@ -3,6 +3,8 @@
 INPUT_TYPE=$1
 ATTEMPT=$2
 
+echo $INPUT_TYPE $ATTEMPT
+
 if [ "$INPUT_TYPE" == "llmsuite" ]; then
     if [ -z "$ATTEMPT" ]; then
         echo "No attempt specified. Running LLMSuite multiple..."

@@ -9,6 +9,7 @@ WORKDIR /app
 
 # Copy binary folder to /app/dataset
 COPY binary/ /app/dataset/
+COPY llm-tests/ /app/llm-tests/
 
 # Copy necessary scripts
 COPY *.sh *.csv *.jar /app/
@@ -20,4 +21,5 @@ RUN chmod +x /app/*.sh /app/*.csv /app/*.jar
 WORKDIR /app
 
 # Run entrypoint script that picks the right one
+ENTRYPOINT ["bash", "/app/run-experiment.sh"]
 CMD ["bash", "/app/run-experiment.sh"]
