@@ -13,9 +13,7 @@ MEMORY="16g"
 START_CPU=0
 
 # Base image
-IMAGE_NAME="llmsuite-nlp-image"
-
-docker build -t $IMAGE_NAME Dockerfile
+IMAGE_NAME="llmsuite-experiment-image"
 
 for i in $(seq 1 $NUM_CONTAINERS); do
   # Calculate core range

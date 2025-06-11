@@ -13,7 +13,7 @@ MEMORY="16g"
 START_CPU=0
 
 # Base image
-IMAGE_NAME="llmsuite-nlp-image"
+IMAGE_NAME="llmsuite-experiment-image"
 
 for i in $(seq 1 $NUM_CONTAINERS); do
   # Calculate core range
