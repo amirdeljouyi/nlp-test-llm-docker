@@ -15,6 +15,8 @@ START_CPU=0
 # Base image
 IMAGE_NAME="llmsuite-nlp-image"
 
+docker build -t $IMAGE_NAME Dockerfile
+
 for i in $(seq 1 $NUM_CONTAINERS); do
   # Calculate core range
   CPU_START=$((START_CPU + (i - 1) * CPUS_PER_CONTAINER))
@@ -22,12 +24,12 @@ for i in $(seq 1 $NUM_CONTAINERS); do
 
   # Volume path
   HOST_VOLUME="$(pwd)/output/llmsuite/$i"
-  CONTAINER_VOLUME="/app/dataset/evosuite"
+  CONTAINER_VOLUME="/app/dataset/llmsuite"
 
   # Ensure the host directory exists
   mkdir -p "$HOST_VOLUME"
 
-  echo "Starting container evo-$i with CPUs $CPU_START-$CPU_END..."
+  echo "Starting container llmsuite-$i with CPUs $CPU_START-$CPU_END..."
 
   docker run -d \
     --cpus="$CPUS_PER_CONTAINER" \
@@ -35,7 +37,7 @@ for i in $(seq 1 $NUM_CONTAINERS); do
     --memory="$MEMORY" \
     --memory-swap="$MEMORY" \
     -v "$HOST_VOLUME":"$CONTAINER_VOLUME" \
-    --name "evo-$i" \
+    --name "llmsuite-$i" \
     "$IMAGE_NAME" \
-    evo $i
+    llmsuite $i
 done
