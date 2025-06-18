@@ -1,3 +1,6 @@
 ./all-classes.csv
-./output.zip
-./output
+./output/*
+
+*.zip
+*.tar.gz
+*.rar
