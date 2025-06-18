@@ -1,0 +1,7 @@
+all-classes.csv
+
+/output/*
+
+*.zip
+*.tar.gz
+*.rar
