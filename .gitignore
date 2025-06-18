@@ -1,5 +1,6 @@
-./all-classes.csv
-./output/*
+all-classes.csv
+
+/output/*
 
 *.zip
 *.tar.gz
