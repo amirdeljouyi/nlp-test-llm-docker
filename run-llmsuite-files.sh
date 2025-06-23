@@ -23,8 +23,8 @@ do
   echo "Class: $class"
   echo ""
 
-  sourceDir="/app/dataset/$proj/"
-  outputDir="/app/dataset/llmsuite/"
+  sourceDir="/app/dataset/$proj"
+  outputDir="/app/dataset/llmsuite"
 
   # Prepare log directory
   logDir="$outputDir/log/"
@@ -52,9 +52,22 @@ do
   echo "junit_suffix: $junit_suffix"
   echo "postfix: $postfix"
   echo "prefix: $prefix"
+  echo "projectCP: $sourceDir/$CP"
+
+  # Convert CP into full paths
+  newCP=""
+  IFS=':' read -ra jars <<< "$CP"
+  for jar in "${jars[@]}"; do
+    newCP+="$sourceDir/$jar:"
+  done
+
+  # Remove trailing colon
+  newCP="${newCP%:}"
+
+  echo "newCP: $newCP"
 
   java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED \
-    -jar llmsuite-r.jar -projectCP "$sourceDir/$CP" -class $class -Dcriterion=BRANCH:LINE:OUTPUT:METHOD:CBRANCH \
+    -jar llmsuite-r.jar -projectCP "$newCP" -class $class -Dcriterion=BRANCH:LINE:OUTPUT:METHOD:CBRANCH \
    -Dtest_naming_strategy=coverage -Dvariable_naming_strategy=TYPE_BASED -Dassertion_timeout=100000 \
    -Dsearch_budget=900 -Dminimize=false -Dcoverage=true -Dwrite_junit_timeout=100000 -Dextra_timeout=10000 \
    -Dalgorithm=LLM_DYNAMOSA -Dllm_stabled_budget=20 $dattempt \
