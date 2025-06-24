@@ -1,5 +1,7 @@
 #!/bin/bash
 
+JAVA=$1
+
 # Number of containers
 NUM_CONTAINERS=5
 
@@ -14,6 +16,17 @@ START_CPU=0
 
 # Base image
 IMAGE_NAME="llmsuite-experiment-image"
+CONTAINER_NAME="llmsuite"
+
+if [ "$JAVA" == "8" ]; then
+  IMAGE_NAME=$IMAGE_NAME-8
+  CONTAINER_NAME=$CONTAINER_NAME-8
+else
+  JAVA=11
+fi
+
+
+echo "IMAGE_NAME: $IMAGE_NAME"
 
 for i in $(seq 1 $NUM_CONTAINERS); do
   # Calculate core range
@@ -35,7 +48,7 @@ for i in $(seq 1 $NUM_CONTAINERS); do
     --memory="$MEMORY" \
     --memory-swap="$MEMORY" \
     -v "$HOST_VOLUME":"$CONTAINER_VOLUME" \
-    --name "llmsuite-$i" \
+    --name "$CONTAINER_NAME-$i" \
     "$IMAGE_NAME" \
-    llmsuite $i
+    llmsuite $i $JAVA
 done

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Set the dataset direction variable (adjust as needed)
-export direction="some_direction"
+#export direction="some_direction"
 
 # Path to your main script
-main_script="./run-llmsuite-files.sh"
+main_script="./run-llmsuite-files.11.sh"
 
 # Loop for five attempts
 for attempt in {1..5}
