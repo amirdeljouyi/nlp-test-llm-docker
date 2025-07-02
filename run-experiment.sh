@@ -19,7 +19,7 @@ else
         echo "No attempt specified. Running Evo multiple..."
         /app/run-evo-multiple.sh
     else
-        echo "Running Evo with attempt $ATTEMPT..."
-        /app/run-evo.sh "$ATTEMPT"
+        echo "Running EvoSuite with JAVA $JAVA with attempt $ATTEMPT..."
+        /app/"run-evo.${JAVA}.sh" "$ATTEMPT"
     fi
 fi

@@ -43,7 +43,7 @@ for i in $(seq 1 $NUM_CONTAINERS); do
   # Ensure the host directory exists
   mkdir -p "$HOST_VOLUME"
 
-  echo "Starting container llmsuite-$i with CPUs $CPU_START-$CPU_END..."
+  echo "Starting container $CONTAINER_NAME-$i with CPUs $CPU_START-$CPU_END..."
 
   docker run -d \
     --cpus="$CPUS_PER_CONTAINER" \

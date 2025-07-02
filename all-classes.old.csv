@@ -8,7 +8,7 @@ CoreNLP,edu.stanford.nlp.pipeline.JSONOutputter,src/edu/stanford/nlp/pipeline/JS
 CoreNLP,edu.stanford.nlp.pipeline.LabeledChunkIdentifier,src/edu/stanford/nlp/pipeline/LabeledChunkIdentifier,CoreNLP/edu/stanford/nlp/pipeline/LabeledChunkIdentifier
 CoreNLP,edu.stanford.nlp.sentiment.SentimentModel,src/edu/stanford/nlp/sentiment/SentimentModel,CoreNLP/edu/stanford/nlp/sentiment/SentimentModel
 CoreNLP,edu.stanford.nlp.parser.lexparser.EnglishTreebankParserParams,src/edu/stanford/nlp/parser/lexparser/EnglishTreebankParserParams,CoreNLP/edu/stanford/nlp/parser/lexparser/EnglishTreebankParserParams
-oreNLP,edu.stanford.nlp.pipeline.WordsToSentencesAnnotator,src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator,CoreNLP/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator
+CoreNLP,edu.stanford.nlp.pipeline.WordsToSentencesAnnotator,src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator,CoreNLP/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator
 CoreNLP,edu.stanford.nlp.pipeline.ParserAnnotator,src/edu/stanford/nlp/pipeline/ParserAnnotator,CoreNLP/edu/stanford/nlp/pipeline/ParserAnnotator
 CoreNLP,edu.stanford.nlp.process.PTBTokenizer,src/edu/stanford/nlp/process/PTBTokenizer,CoreNLP/edu/stanford/nlp/process/PTBTokenizer
 CoreNLP,edu.stanford.nlp.pipeline.MorphaAnnotator,src/edu/stanford/nlp/pipeline/MorphaAnnotator,CoreNLP/edu/stanford/nlp/pipeline/MorphaAnnotator

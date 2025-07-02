@@ -1,5 +1,7 @@
 #!/bin/bash
 
+JAVA=$1
+
 # Number of containers
 NUM_CONTAINERS=5
 
@@ -14,6 +16,17 @@ START_CPU=0
 
 # Base image
 IMAGE_NAME="llmsuite-experiment-image"
+CONTAINER_NAME="evo"
+
+if [ "$JAVA" == "8" ]; then
+  IMAGE_NAME=$IMAGE_NAME-8
+  CONTAINER_NAME=$CONTAINER_NAME-8
+elif [ "$JAVA" == "17" ]; then
+  IMAGE_NAME=$IMAGE_NAME-17
+  CONTAINER_NAME=$CONTAINER_NAME-17
+else
+  JAVA=11
+fi
 
 for i in $(seq 1 $NUM_CONTAINERS); do
   # Calculate core range
@@ -27,7 +40,7 @@ for i in $(seq 1 $NUM_CONTAINERS); do
   # Ensure the host directory exists
   mkdir -p "$HOST_VOLUME"
 
-  echo "Starting container evo-$i with CPUs $CPU_START-$CPU_END..."
+  echo "Starting container $CONTAINER_NAME-$i with CPUs $CPU_START-$CPU_END..."
 
   docker run -d \
     --cpus="$CPUS_PER_CONTAINER" \
@@ -35,7 +48,7 @@ for i in $(seq 1 $NUM_CONTAINERS); do
     --memory="$MEMORY" \
     --memory-swap="$MEMORY" \
     -v "$HOST_VOLUME":"$CONTAINER_VOLUME" \
-    --name "evo-$i" \
+    --name "$CONTAINER_NAME-$i" \
     "$IMAGE_NAME" \
-    evo $i
+    evo $i $JAVA
 done
