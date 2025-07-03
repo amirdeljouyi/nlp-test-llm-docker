@@ -16,7 +16,7 @@ else
   attempt="$1"
 fi
 
-outputDir="/app/dataset/llmsuite"
+outputDir="/app/dataset/llmsuite-llama"
 
 # Prepare log directory
 logDir="$outputDir/log/"
@@ -68,6 +68,9 @@ mkdir -p "$logDir"
 
     echo "newCP: $newCP"
 
+    llmSource="/app/dataset/source/${proj}/${src}"
+    echo "llmSource: $llmSource"
+
     java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED \
       -jar llmsuite-r.jar -projectCP "$newCP" -class $class -Dcriterion=BRANCH:LINE:OUTPUT:METHOD:CBRANCH \
       -Dtest_naming_strategy=coverage -Dvariable_naming_strategy=TYPE_BASED -Dassertion_timeout=100000 \
@@ -75,7 +78,7 @@ mkdir -p "$logDir"
       -Dalgorithm=LLM_DYNAMOSA -Dllm_stabled_budget=20 $dattempt \
       -Doutput_variables=TARGET_CLASS,attempt,criterion,Coverage,Total_Goals,BranchCoverage,LineCoverage,OutputCoverage,CBranchCoverage,MethodCoverage,Covered_Goals,CoverageTimeline,Fitness,FitnessTimeline,BranchCoverageTimeline,LineCoverageTimeline,Tests_Executed,Total_Time \
       -Dllm_test_generation_approach=API -Dllm_test_file_source_directory=llm-tests/$llm_test -Dtimeline_interval=5000 \
-      -Ddefuse_debug_mode=true -Dtest_format=JUNIT4 -Djunit_check_timeout=10000 -Dllm_source_directory=source/$proj/$src \
+      -Ddefuse_debug_mode=true -Dtest_format=JUNIT4 -Djunit_check_timeout=10000 -Dllm_source_directory=$llmSource \
       -Dcheck_contracts=false -Dllm_static_constant_pool=false -Dsandbox=false -Dno_runtime_dependency=false -Dreset_static_fields=false \
       -Dreport_dir=$outputDir/evosuite-report -Dtest_dir=$outputDir/generated-tests$postfix -Djunit_suffix=$junit_suffix \
       -Dbytecode_logging_mode=FILE_DUMP \

@@ -10,6 +10,7 @@ WORKDIR /app
 
 # Copy binary folder to /app/dataset
 COPY binary/ /app/dataset/
+COPY source/ /app/dataset/source/
 COPY llm-tests/ /app/llm-tests/
 
 # Copy necessary scripts
