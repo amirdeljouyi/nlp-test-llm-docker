@@ -37,13 +37,13 @@ for i in $(seq 1 $NUM_CONTAINERS); do
   CPU_END=$((CPU_START + CPUS_PER_CONTAINER - 1))
 
   # Volume path
-  HOST_VOLUME="$(pwd)/output/llmsuite/$i"
-  CONTAINER_VOLUME="/app/dataset/llmsuite"
+  HOST_VOLUME="$(pwd)/output/llmsuite-llama/$i"
+  CONTAINER_VOLUME="/app/dataset/llmsuite-llama"
 
   # Ensure the host directory exists
   mkdir -p "$HOST_VOLUME"
 
-  echo "Starting container llmsuite-$i with CPUs $CPU_START-$CPU_END..."
+  echo "Starting container $CONTAINER_NAME-$i with CPUs $CPU_START-$CPU_END..."
 
   docker run -d \
     --cpus="$CPUS_PER_CONTAINER" \
@@ -53,5 +53,7 @@ for i in $(seq 1 $NUM_CONTAINERS); do
     -v "$HOST_VOLUME":"$CONTAINER_VOLUME" \
     --name "$CONTAINER_NAME-$i" \
     "$IMAGE_NAME" \
-    llmsuite $i $JAVA
+    llmsuite-llama $i $JAVA
+
+  sleep 120
 done

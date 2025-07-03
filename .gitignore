@@ -6,3 +6,4 @@ classes.csv
 *.zip
 *.tar.gz
 *.rar
+/source/*
