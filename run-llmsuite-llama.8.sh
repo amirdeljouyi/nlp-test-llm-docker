@@ -80,7 +80,7 @@ mkdir -p "$logDir"
      -Ddefuse_debug_mode=true -Dtest_format=JUNIT4 -Djunit_check_timeout=10000 -Dllm_source_directory=$llmSource \
      -Dcheck_contracts=false -Dllm_static_constant_pool=false -Dsandbox=false -Dno_runtime_dependency=false -Dreset_static_fields=false \
      -Dreport_dir=$outputDir/evosuite-report -Dtest_dir=$outputDir/generated-tests$postfix -Djunit_suffix=$junit_suffix \
-     -Dbytecode_logging_mode=FILE_DUMP \
+     -Dbytecode_logging_mode=FILE_DUMP -Dllm_endpoint="http://127.0.0.1:8000/graphql" \
      > $logDir/$class-$prefix-stat.log 2> $logDir/$class-$prefix-error.log
 
   done < <(tail -n +2 $fileDirectory.csv)
