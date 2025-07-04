@@ -74,14 +74,14 @@ mkdir -p "$logDir"
     java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED \
       -jar llmsuite-r.jar -projectCP "$newCP" -class $class -Dcriterion=BRANCH:LINE:OUTPUT:METHOD:CBRANCH \
       -Dtest_naming_strategy=coverage -Dvariable_naming_strategy=TYPE_BASED -Dassertion_timeout=100000 \
-      -Dsearch_budget=900 -Dminimize=false -Dcoverage=true -Dwrite_junit_timeout=100000 -Dextra_timeout=10000 \
+      -Dsearch_budget=1300 -Dminimize=false -Dcoverage=true -Dwrite_junit_timeout=100000 -Dextra_timeout=10000 \
       -Dalgorithm=LLM_DYNAMOSA -Dllm_stabled_budget=20 $dattempt \
       -Doutput_variables=TARGET_CLASS,attempt,criterion,Coverage,Total_Goals,BranchCoverage,LineCoverage,OutputCoverage,CBranchCoverage,MethodCoverage,Covered_Goals,CoverageTimeline,Fitness,FitnessTimeline,BranchCoverageTimeline,LineCoverageTimeline,Tests_Executed,Total_Time \
       -Dllm_test_generation_approach=API -Dllm_test_file_source_directory=llm-tests/$llm_test -Dtimeline_interval=5000 \
       -Ddefuse_debug_mode=true -Dtest_format=JUNIT4 -Djunit_check_timeout=10000 -Dllm_source_directory=$llmSource \
       -Dcheck_contracts=false -Dllm_static_constant_pool=false -Dsandbox=false -Dno_runtime_dependency=false -Dreset_static_fields=false \
       -Dreport_dir=$outputDir/evosuite-report -Dtest_dir=$outputDir/generated-tests$postfix -Djunit_suffix=$junit_suffix \
-      -Dbytecode_logging_mode=FILE_DUMP -Dllm_endpoint="http://127.0.0.1:8000/graphql" \
+      -Dbytecode_logging_mode=FILE_DUMP -Dllm_endpoint="http://172.17.0.1:800${attempt}/graphql" \
           > $logDir/$class-$prefix-stat.log 2> $logDir/$class-$prefix-error.log
   done < <(tail -n +2 $fileDirectory.csv)
-} > $logDir/global_output.log 2> $logDir/global_error.log
+} > $logDir/global_output.log 2> $logDir/global_11_error.log

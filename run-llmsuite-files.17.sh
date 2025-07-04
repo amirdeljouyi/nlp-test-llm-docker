@@ -5,7 +5,7 @@ export JDK_JAVA_OPTIONS="-Djdk.attach.allowAttachSelf=true"
 echo "RUNNING ON THE $direction DATASET"
 
 if [ $# -lt 2 ]; then
-  fileDirectory="classes"
+  fileDirectory="17.classes"
 else
   fileDirectory="$1-classes"
 fi

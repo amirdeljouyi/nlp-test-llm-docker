@@ -16,7 +16,7 @@ START_CPU=0
 
 # Base image
 IMAGE_NAME="llmsuite-experiment-image"
-CONTAINER_NAME="llmsuite-llama"
+CONTAINER_NAME="llmsuite-file"
 
 if [ "$JAVA" == "8" ]; then
   IMAGE_NAME=$IMAGE_NAME-8
@@ -37,8 +37,8 @@ for i in $(seq 1 $NUM_CONTAINERS); do
   CPU_END=$((CPU_START + CPUS_PER_CONTAINER - 1))
 
   # Volume path
-  HOST_VOLUME="$(pwd)/output/llmsuite-llama/$i"
-  CONTAINER_VOLUME="/app/dataset/llmsuite-llama"
+  HOST_VOLUME="$(pwd)/output/llmsuite-file/$i"
+  CONTAINER_VOLUME="/app/dataset/llmsuite-file"
 
   # Ensure the host directory exists
   mkdir -p "$HOST_VOLUME"
@@ -53,7 +53,5 @@ for i in $(seq 1 $NUM_CONTAINERS); do
     -v "$HOST_VOLUME":"$CONTAINER_VOLUME" \
     --name "$CONTAINER_NAME-$i" \
     "$IMAGE_NAME" \
-    llmsuite-llama $i $JAVA
-
-  sleep 300
+    llmsuite-file $i $JAVA
 done
