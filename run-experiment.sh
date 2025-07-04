@@ -30,6 +30,14 @@ elif [ "$INPUT_TYPE" == "llmsuite-file" ]; then
         echo "Running LLMSuite with JAVA $JAVA with attempt $ATTEMPT..."
         /app/"run-llmsuite-file.${JAVA}.sh" "$ATTEMPT"
     fi
+elif [ "$INPUT_TYPE" == "codamosa" ]; then
+    if [ -z "$ATTEMPT" ]; then
+        echo "No attempt specified. Running CodaMosa multiple..."
+        /app/run-codamosa-multiple.sh
+    else
+        echo "Running CodaMosa with JAVA $JAVA with attempt $ATTEMPT..."
+        /app/"run-codamosa.${JAVA}.sh" "$ATTEMPT"
+    fi
 else
     if [ -z "$ATTEMPT" ]; then
         echo "No attempt specified. Running Evo multiple..."
