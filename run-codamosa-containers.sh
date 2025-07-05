@@ -3,7 +3,7 @@
 JAVA=$1
 
 # Number of containers
-NUM_CONTAINERS=1
+NUM_CONTAINERS=5
 
 # CPU cores per container
 CPUS_PER_CONTAINER=6
@@ -12,7 +12,7 @@ CPUS_PER_CONTAINER=6
 MEMORY="16g"
 
 # Starting CPU core index
-START_CPU=0
+START_CPU=$2
 
 # Base image
 IMAGE_NAME="llmsuite-experiment-image"
@@ -31,7 +31,7 @@ fi
 
 echo "IMAGE_NAME: $IMAGE_NAME"
 
-for i in $(seq 1 $NUM_CONTAINERS); do
+for i in $(seq 2 $NUM_CONTAINERS); do
   # Calculate core range
   CPU_START=$((START_CPU + (i - 1) * CPUS_PER_CONTAINER))
   CPU_END=$((CPU_START + CPUS_PER_CONTAINER - 1))

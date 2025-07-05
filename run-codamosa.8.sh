@@ -67,6 +67,8 @@ mkdir -p "$logDir"
     newCP="${newCP%:}"
 
     echo "newCP: $newCP"
+    llmSource="/app/dataset/source/${proj}/${src}"
+    echo "llmSource: $llmSource"
 
     java -jar llmsuite-8.jar -projectCP "$newCP" -class $class -Dcriterion=BRANCH:LINE:OUTPUT:METHOD:CBRANCH \
       -Dtest_naming_strategy=coverage -Dvariable_naming_strategy=TYPE_BASED -Dassertion_timeout=100000 \

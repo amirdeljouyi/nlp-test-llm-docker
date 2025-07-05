@@ -68,6 +68,9 @@ mkdir -p "$logDir"
 
     echo "newCP: $newCP"
 
+    llmSource="/app/dataset/source/${proj}/${src}"
+    echo "llmSource: $llmSource"
+
     java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED \
       -jar llmsuite-r.jar -projectCP "$newCP" -class $class -Dcriterion=BRANCH:LINE:OUTPUT:METHOD:CBRANCH \
       -Dtest_naming_strategy=coverage -Dvariable_naming_strategy=TYPE_BASED -Dassertion_timeout=100000 \
