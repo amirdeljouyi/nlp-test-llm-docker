@@ -38,6 +38,14 @@ elif [ "$INPUT_TYPE" == "codamosa" ]; then
         echo "Running CodaMosa with JAVA $JAVA with attempt $ATTEMPT..."
         /app/"run-codamosa.${JAVA}.sh" "$ATTEMPT"
     fi
+elif [ "$INPUT_TYPE" == "llminputonly" ]; then
+    if [ -z "$ATTEMPT" ]; then
+        echo "No attempt specified. Running LLMInputOnly multiple..."
+        /app/run-llminputonly-multiple.sh
+    else
+        echo "Running LLMInputOnly with JAVA $JAVA with attempt $ATTEMPT..."
+        /app/"run-llminputonly.${JAVA}.sh" "$ATTEMPT"
+    fi
 else
     if [ -z "$ATTEMPT" ]; then
         echo "No attempt specified. Running Evo multiple..."
