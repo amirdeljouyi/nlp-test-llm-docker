@@ -28,6 +28,7 @@ CoreNLP,edu.stanford.nlp.pipeline.WikidictAnnotator,src/edu/stanford/nlp/pipelin
 CoreNLP,edu.stanford.nlp.pipeline.GenderAnnotator,src/edu/stanford/nlp/pipeline/GenderAnnotator,CoreNLP/edu/stanford/nlp/pipeline/GenderAnnotator
 CoreNLP,edu.stanford.nlp.pipeline.ArabicSegmenterAnnotator,src/edu/stanford/nlp/pipeline/ArabicSegmenterAnnotator,CoreNLP/edu/stanford/nlp/pipeline/ArabicSegmenterAnnotator
 CoreNLP,edu.stanford.nlp.pipeline.ProtobufAnnotationSerializer,src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializer,CoreNLP/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializer
+CoreNLP,edu.stanford.nlp.pipeline.CleanXmlAnnotator,src/edu/stanford/nlp/pipeline/CleanXmlAnnotator,CoreNLP/edu/stanford/nlp/pipeline/CleanXmlAnnotator
 CoreNLP,edu.stanford.nlp.process.Morphology,src/edu/stanford/nlp/process/Morphology,CoreNLP/edu/stanford/nlp/process/Morphology
 CoreNLP,edu.stanford.nlp.process.Stemmer,src/edu/stanford/nlp/process/Stemmer,CoreNLP/edu/stanford/nlp/process/Stemmer
 CoreNLP,edu.stanford.nlp.process.WordToSentenceProcessor,src/edu/stanford/nlp/process/WordToSentenceProcessor,CoreNLP/edu/stanford/nlp/process/WordToSentenceProcessor

@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/source/CogCompNLP" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/source/CoreNLP" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/source/GateCore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/source/Mallet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/source/OpenNLP" vcs="Git" />
   </component>
 </project>

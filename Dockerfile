@@ -11,6 +11,7 @@ WORKDIR /app
 COPY binary/ /app/dataset/
 COPY source/ /app/dataset/source/
 COPY llm-tests/ /app/llm-tests/
+COPY llm-pool/ /app/llm-pool/
 
 # Copy necessary scripts
 COPY *.sh *.csv *.jar /app/
