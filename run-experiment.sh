@@ -46,6 +46,14 @@ elif [ "$INPUT_TYPE" == "llminputonly" ]; then
         echo "Running LLMInputOnly with JAVA $JAVA with attempt $ATTEMPT..."
         /app/"run-llminputonly.${JAVA}.sh" "$ATTEMPT"
     fi
+elif [ "$INPUT_TYPE" == "llmsuite-wosr" ]; then
+    if [ -z "$ATTEMPT" ]; then
+        echo "No attempt specified. Running LLMInputOnly multiple..."
+        /app/run-llmsuite-files-wosr-multiple.sh
+    else
+        echo "Running LLMInputOnly with JAVA $JAVA with attempt $ATTEMPT..."
+        /app/"run-llmsuite-files-wosr.${JAVA}.sh" "$ATTEMPT"
+    fi
 else
     if [ -z "$ATTEMPT" ]; then
         echo "No attempt specified. Running Evo multiple..."

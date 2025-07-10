@@ -31,7 +31,7 @@ fi
 
 echo "IMAGE_NAME: $IMAGE_NAME"
 
-for i in $(seq 2 $NUM_CONTAINERS); do
+for i in $(seq 1 $NUM_CONTAINERS); do
   # Calculate core range
   CPU_START=$((START_CPU + (i - 1) * CPUS_PER_CONTAINER))
   CPU_END=$((CPU_START + CPUS_PER_CONTAINER - 1))

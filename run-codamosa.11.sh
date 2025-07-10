@@ -77,7 +77,7 @@ mkdir -p "$logDir"
       -Dsearch_budget=900 -Dminimize=false -Dcoverage=true -Dwrite_junit_timeout=100000 -Dextra_timeout=10000 \
       -Dalgorithm=CODAMOSA -Dllm_stabled_budget=30 -Dllm_test_generation_budget=5 $dattempt \
       -Doutput_variables=TARGET_CLASS,attempt,criterion,Coverage,Total_Goals,BranchCoverage,LineCoverage,OutputCoverage,CBranchCoverage,MethodCoverage,Covered_Goals,CoverageTimeline,Fitness,FitnessTimeline,BranchCoverageTimeline,LineCoverageTimeline,Tests_Executed,Total_Time \
-      -Dllm_test_generation_approach=API -Dllm_test_file_source_directory=llm-tests/$llm_test -Dtimeline_interval=5000 \
+      -Dllm_test_generation_approach=FILES -Dllm_test_file_source_directory=llm-tests-codamosa/$llm_test -Dtimeline_interval=5000 \
       -Ddefuse_debug_mode=true -Dtest_format=JUNIT4 -Djunit_check_timeout=10000 -Dllm_source_directory=$llmSource \
       -Dcheck_contracts=false -Dllm_static_constant_pool=false -Dsandbox=false -Dno_runtime_dependency=false -Dreset_static_fields=false \
       -Dreport_dir=$outputDir/evosuite-report -DOUTPUT_DIR=$outputDir/evosuite-files -Dtest_dir=$outputDir/generated-tests$postfix -Djunit_suffix=$junit_suffix \

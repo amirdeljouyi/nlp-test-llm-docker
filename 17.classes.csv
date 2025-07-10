@@ -1,9 +1,9 @@
 project,class,src,llm_directory
-OpenNLP,opennlp.tools.ml.maxent.GISTrainer,opennlp-tools/src/main/opennlp/tools/ml/maxent/POSTaggerFactory,OpenNLP/ml/maxent/GISTrainer
-OpenNLP,opennlp.tools.stemmer.PorterStemmer,opennlp-tools/src/main/opennlp/tools/stemmer/PorterStemmer,OpenNLP/stemmer/PorterStemmer
-OpenNLP,opennlp.tools.stemmer.snowball.greekStemmer,opennlp-tools/src/main/opennlp/tools/stemmer/snowball/greekStemmer,OpenNLP/stemmer/snowball/greekStemmer
-OpenNLP,opennlp.tools.stemmer.snowball.arabicStemmer,opennlp-tools/src/main/opennlp/tools/stemmer/snowball/arabicStemmer,OpenNLP/stemmer/snowball/arabicStemmer
-OpenNLP,opennlp.tools.stemmer.snowball.SnowballProgram,opennlp-tools/src/main/opennlp/tools/stemmer/snowball/SnowballProgram,OpenNLP/stemmer/snowball/SnowballProgram
-OpenNLP,opennlp.tools.stemmer.snowball.SnowballStemmer,opennlp-tools/src/main/opennlp/tools/stemmer/snowball/SnowballStemmer,OpenNLP/stemmer/snowball/SnowballStemmer
-OpenNLP,opennlp.tools.parser.Parse,opennlp-tools/src/main/opennlp/tools/parser/Parse,OpenNLP/parser/Parse
-OpenNLP,opennlp.tools.ngram.NGramModel,opennlp-tools/src/main/opennlp/tools/ngram/NGramModel,OpenNLP/ngram/NGramModel
+OpenNLP,opennlp.tools.ml.maxent.GISTrainer,OpenNLP/opennlp/tools/ml/maxent/GISTrainer,OpenNLP/opennlp/tools/ml/maxent/GISTrainer
+OpenNLP,opennlp.tools.stemmer.PorterStemmer,OpenNLP/opennlp/tools/stemmer/PorterStemmer,OpenNLP/opennlp/tools/stemmer/PorterStemmer
+OpenNLP,opennlp.tools.stemmer.snowball.greekStemmer,OpenNLP/opennlp/tools/stemmer/snowball/greekStemmer,OpenNLP/opennlp/tools/stemmer/snowball/greekStemmer
+OpenNLP,opennlp.tools.stemmer.snowball.arabicStemmer,OpenNLP/opennlp/tools/stemmer/snowball/arabicStemmer,OpenNLP/opennlp/tools/stemmer/snowball/arabicStemmer
+OpenNLP,opennlp.tools.stemmer.snowball.SnowballProgram,OpenNLP/opennlp/tools/stemmer/snowball/SnowballProgram,OpenNLP/opennlp/tools/stemmer/snowball/SnowballProgram
+OpenNLP,opennlp.tools.stemmer.snowball.SnowballStemmer,OpenNLP/opennlp/tools/stemmer/snowball/SnowballStemmer,OpenNLP/opennlp/tools/stemmer/snowball/SnowballStemmer
+OpenNLP,opennlp.tools.parser.Parse,OpenNLP/opennlp/tools/parser/Parse,OpenNLP/opennlp/tools/parser/Parse
+OpenNLP,opennlp.tools.ngram.NGramModel,OpenNLP/opennlp/tools/ngram/NGramModel,OpenNLP/opennlp/tools/ngram/NGramModel
