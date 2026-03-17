@@ -151,3 +151,4 @@ public void test7()
     savedFile.delete();
     new File(baseFilePath + ".nb.featuremap").delete();
 }
+

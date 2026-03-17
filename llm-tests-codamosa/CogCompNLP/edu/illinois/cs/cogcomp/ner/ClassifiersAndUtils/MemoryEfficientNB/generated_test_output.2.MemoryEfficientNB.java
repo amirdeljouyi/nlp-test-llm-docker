@@ -169,3 +169,4 @@ public void test7()
     assertTrue(featureMapFile.exists());
     featureMapFile.deleteOnExit();
 }
+

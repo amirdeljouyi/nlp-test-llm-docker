@@ -221,3 +221,4 @@ public void test8()
     new File(pathWithoutExtension).delete();
     new File(pathWithoutExtension + ".nb.featuremap").delete();
 }
+

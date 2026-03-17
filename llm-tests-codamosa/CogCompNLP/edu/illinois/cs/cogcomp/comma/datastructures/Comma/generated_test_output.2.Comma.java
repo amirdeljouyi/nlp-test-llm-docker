@@ -766,3 +766,4 @@ public void test32()
     assertEquals(1, siblings.size());
     assertTrue(siblings.contains(stubComma2));
 }
+
